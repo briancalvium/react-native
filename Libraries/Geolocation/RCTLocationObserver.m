@@ -144,6 +144,7 @@ RCT_EXPORT_MODULE()
   if ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationAlwaysUsageDescription"] &&
     [_locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
     [_locationManager requestAlwaysAuthorization];
+    [_locationManager setAllowsBackgroundLocationUpdates:YES];
   } else if ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationWhenInUseUsageDescription"] &&
     [_locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
     [_locationManager requestWhenInUseAuthorization];
